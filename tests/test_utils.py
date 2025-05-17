@@ -18,6 +18,7 @@ for name in ["pandas", "telethon", "telethon.tl.functions.channels", "telethon.t
                 module.TelegramClient = DummyClient
             if name.endswith("functions.channels"):
                 module.JoinChannelRequest = object
+                module.GetFullChannelRequest = object
             if name.endswith("types"):
                 module.PeerChannel = object
         if name == "dotenv":
@@ -27,7 +28,7 @@ for name in ["pandas", "telethon", "telethon.tl.functions.channels", "telethon.t
                 return "en"
             module.detect = detect
             module.DetectorFactory = types.SimpleNamespace(seed=0)
-from telegram_scraper import _parse_subs, deduplicate
+from utils import _parse_subs, deduplicate
 
 class TestUtils(unittest.TestCase):
     def test_parse_subs(self):
