@@ -24,6 +24,7 @@ Optional variables allow customization of paths and crawling limits:
 - `RAW_CSV` – raw scraped messages (default `messages.csv`)
 - `CLEAN_CSV` – cleaned output file (default `cleaned.csv`)
 - `BFS_HOPS`, `BFS_PER_CH_LIMIT`, `BFS_MIN_SUBS`, `BFS_LANG_SAMPLE`, `BFS_EN_RATIO` – parameters for channel discovery
+- `BFS_FWD_MIN`, `BFS_INCLUDE_MENTIONS`, `BFS_TOPIC_KEYWORDS`, `BFS_TOPIC_RATIO`, `BFS_TOPIC_SAMPLE`, `BFS_MAX_DORMANT_DAYS`, `BFS_PAUSE_SEC` – advanced crawler settings
 
 These path variables are optional; if unset the defaults shown above are used.
 
@@ -33,11 +34,13 @@ The dataset of suspicious channels was manually curated and contains usernames a
 
 Run the scraper:
 
+Run the provided Jupyter notebook:
+
 ```bash
-python telegram_scraper.py
+jupyter notebook 'Telegram (5).ipynb'
 ```
 
-The script discovers related channels using a breadth‑first search and saves raw messages to `RAW_CSV`. Afterwards, `preprocess_data()` deduplicates and anonymizes the messages, producing `CLEAN_CSV`.
+The notebook discovers related channels using a breadth‑first search and saves raw messages to `RAW_CSV`. Afterwards, the cleaning step deduplicates and anonymizes messages, producing `CLEAN_CSV`.
 
 ## Testing
 
