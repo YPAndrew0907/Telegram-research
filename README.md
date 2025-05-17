@@ -25,6 +25,8 @@ Optional variables allow customization of paths and crawling limits:
 - `CLEAN_CSV` – cleaned output file (default `cleaned.csv`)
 - `BFS_HOPS`, `BFS_PER_CH_LIMIT`, `BFS_MIN_SUBS`, `BFS_LANG_SAMPLE`, `BFS_EN_RATIO` – parameters for channel discovery
 
+These path variables are optional; if unset the defaults shown above are used.
+
 The dataset of suspicious channels was manually curated and contains usernames and subscriber counts for various crypto signal groups.
 
 ## Usage
